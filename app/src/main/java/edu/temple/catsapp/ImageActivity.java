@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class ImageActivity extends AppCompatActivity {
     Spinner spinner;
     ImageView imageView;
 
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,8 @@ public class ImageActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.spinner);
         imageView = findViewById(R.id.imageView);
+
+        //textView = findViewById(R.id.displayTextView)
 
         ArrayList catsArray = new ArrayList<String>();
         catsArray.add("Bengal");
@@ -35,7 +40,7 @@ public class ImageActivity extends AppCompatActivity {
 
         catImagesArray = new int[]{R.drawable.bengal, R.drawable.britishblue, R.drawable.norwegianforest, R.drawable.persian, R.drawable.siamese};
 
-        ImageAdapter adapter = new ImageAdapter(this, catsArray);
+        ImageAdapter adapter = new ImageAdapter(this, catsArray, catImagesArray);
 
         spinner.setAdapter(adapter);
 
@@ -47,7 +52,7 @@ public class ImageActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                //textView.setText
             }
         });
 
