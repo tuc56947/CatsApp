@@ -3,6 +3,8 @@ package edu.temple.catsapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -37,8 +39,21 @@ public class ImageActivity extends AppCompatActivity {
 
         spinner.setAdapter(adapter);
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                showPicture(position);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
 
+    }
+
+    private void showPicture (int position) {
+        imageView.setImageResource(catImagesArray[position]);
     }
 }
