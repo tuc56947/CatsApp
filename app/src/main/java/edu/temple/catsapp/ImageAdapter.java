@@ -1,6 +1,7 @@
 package edu.temple.catsapp;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -41,6 +42,7 @@ public class ImageAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView = new TextView(context);
         textView.setText(items.get(position));
+        textView.setGravity(Gravity.CENTER);
 
         return textView;
     }
